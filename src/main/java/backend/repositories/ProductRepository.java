@@ -61,39 +61,41 @@ public class ProductRepository {
                 .getResultList();
     }
 
-//    public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
-//        List<Cart> book = new ArrayList<>();
-//        if (!cartList.isEmpty()) {
-//            for (Cart item : cartList) {
-//                Product product = em.find(Product.class, item.getId());
-//                System.out.println(product);
-//                Cart row = new Cart();
-//                row.setId(item.getId());
-//                row.setName(product.getName());
-//                row.setDescription(product.getDescription());
-//                row.setQuantity(item.getQuantity());
-//                double price = productPriceService.getPriceOfProduct(item.getId());
-//                row.setPrice(price * item.getQuantity());
-//                book.add(row);
-//            }
-//        }
-//        return book;
-//    }
+    public List<Cart> getCartProducts(ArrayList<Cart> cartList) {
+        List<Cart> book = new ArrayList<>();
+        if (!cartList.isEmpty()) {
+            for (Cart item : cartList) {
+                Product product = em.find(Product.class, item.getId());
+                System.out.println(product);
+                Cart row = new Cart();
+                row.setId(item.getId());
+                row.setName(product.getName());
+                row.setDescription(product.getDescription());
+                row.setQuantity(item.getQuantity());
+                double price = productPriceService.getPriceOfProduct(item.getId());
+                row.setPrice(price * item.getQuantity());
+                book.add(row);
+            }
+        }
+        return book;
+    }
 
-//    public double getTotalCartPrice(ArrayList<Cart> cartList) {
-//        double sum = 0;
-//        if (!cartList.isEmpty()) {
-//            for (Cart item : cartList) {
-//                double price = productPriceService.getPriceOfProduct(item.getId());
-//                sum += price * item.getQuantity();
-//            }
-//        }
-//        return sum;
-//    }
+    public double getTotalCartPrice(ArrayList<Cart> cartList) {
+        double sum = 0;
+        if (!cartList.isEmpty()) {
+            for (Cart item : cartList) {
+                double price = productPriceService.getPriceOfProduct(item.getId());
+                sum += price * item.getQuantity();
+            }
+        }
+        return sum;
+    }
 
     public String getProductNameById(long id){
         return em.createNamedQuery("Product.getProductByName",String.class)
                 .setParameter("id",id)
                 .getSingleResult();
     }
+
+
 }

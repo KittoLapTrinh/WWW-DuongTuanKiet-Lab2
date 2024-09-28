@@ -1,0 +1,34 @@
+<nav class="navbar bg-body-tertiary justify-content-center">
+    <ul class="nav nav-underline">
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.jsp">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="dashboard.jsp.jsp">Dashboard</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Insert</a>
+            <ul class="dropdown-menu">
+                <li><a  class="dropdown-item" href="insert-customer.jsp">Insert Customer</a></li>
+                <li><a  class="dropdown-item" href="insert-product.jsp">Insert Product</a></li>
+                <li><a  class="dropdown-item" href="insert-employee.jsp">Insert Employee</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="product-page.jsp">Product</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="customer-page.jsp">Customer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="employee-page.jsp">Employee</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="cart.jsp">Cart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="orders.jsp">Order</a>
+        </li>
+    </ul>
+
+</nav>

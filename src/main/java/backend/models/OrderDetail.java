@@ -12,6 +12,17 @@ import java.lang.annotation.Target;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@NamedQueries({
+        @NamedQuery(
+                name = "OrderDetail.getTotalPrice",
+                query = "select SUM(od.price) from OrderDetail od where od.order.id =: id"
+        ),
+        @NamedQuery(
+                name = "OrderDetail.staticsPriceByProduct",
+                query = "select product.id, SUM(od.price) from OrderDetail od group by od.product.id"
+        )
+
+})
 public class OrderDetail {
     @Id
     @ManyToOne

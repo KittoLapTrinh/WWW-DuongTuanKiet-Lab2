@@ -29,7 +29,7 @@ public class OrderRepository {
         }
     }
 
-    public Optional<Order> getOrderLastest(){
+    public Optional<Order> getOrderLatest(){
         Order order = em.createNamedQuery("Order.getOrderLast", Order.class).getSingleResult();
         return Optional.ofNullable(Optional.of(order)).orElseThrow(() -> new RuntimeException("Not found"));
     }
@@ -38,4 +38,6 @@ public class OrderRepository {
     public List<Order> getAll(){
         return em.createNamedQuery("Order.getAll",Order.class).getResultList();
     }
+
+
 }
