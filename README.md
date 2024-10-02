@@ -5,8 +5,7 @@
 ### Giới thiệu chương trình
 Chương trình quản lý bán hàng cung cấp một cách thức dễ dàng cho việc mua hàng cũng như quản lý sản phẩm cùng các bên liên quan
 ### Sơ đồ database của hệ thống
-<img src="screenshots/database-diagram.png" alt="drawing" style="width:60%;height:60%"/>
-
+![image](https://github.com/user-attachments/assets/a699b97b-a758-4e3b-9385-2c95d353f6fa)
 
 ### Chức năng của chương trình
   - Trang chủ của chương trình
