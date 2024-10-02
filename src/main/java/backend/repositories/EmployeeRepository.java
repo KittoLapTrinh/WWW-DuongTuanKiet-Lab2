@@ -15,38 +15,38 @@ public class EmployeeRepository {
     private final EntityTransaction transaction;
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
-    public EmployeeRepository(){
+    public EmployeeRepository() {
         em = ConnectDB.getInstance().getEntityManagerFactory().createEntityManager();
         transaction = em.getTransaction();
     }
 
-    public void insertEmp(Employee employee){
-        try{
+    public void insertEmp(Employee employee) {
+        try {
             transaction.begin();
             em.persist(employee);
             transaction.commit();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             transaction.rollback();
             logger.error(ex.getMessage());
         }
     }
 
-    public void setStatus(Employee employee, EmployeeStatus status){
+    public void setStatus(Employee employee, EmployeeStatus status) {
         employee.setEmployeeStatus(status);
     }
 
-    public void update(Employee employee){
-        try{
+    public void update(Employee employee) {
+        try {
             transaction.begin();
             em.merge(employee);
             transaction.commit();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             transaction.rollback();
             logger.error(ex.getMessage());
         }
     }
 
-    public Optional<Employee> findById(long id){
+    public Optional<Employee> findById(long id) {
         Employee rs = em.find(Employee.class, id);
         return rs == null ? Optional.empty() : Optional.of(rs);
     }
@@ -56,4 +56,5 @@ public class EmployeeRepository {
                 .setParameter("status", EmployeeStatus.ACTIVE)
                 .getResultList();
     }
+
 }

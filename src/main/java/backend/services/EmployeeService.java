@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Optional;
 
+
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
@@ -48,10 +49,11 @@ public class EmployeeService {
     }
 
     public void updateEmp(Employee employee){
-        employeeRepository.update(employee);
+       employeeRepository.update(employee);
     }
 
     public List<Employee> getAll() {
         return employeeRepository.getAllEmp();
     }
+
 }

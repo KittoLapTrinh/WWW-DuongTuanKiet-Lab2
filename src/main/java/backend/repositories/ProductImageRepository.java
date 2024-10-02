@@ -6,7 +6,6 @@ import jakarta.persistence.EntityTransaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 public class ProductImageRepository {
     private EntityManager em;
     private EntityTransaction transaction;
@@ -17,7 +16,7 @@ public class ProductImageRepository {
         transaction = em.getTransaction();
     }
     public ProductImage getImageByProductId(long productId){
-        return em.createNamedQuery("ProductImage.getImage", ProductImage.class)
+       return em.createNamedQuery("ProductImage.getImage", ProductImage.class)
                 .setParameter("id",productId)
                 .getSingleResult();
     }

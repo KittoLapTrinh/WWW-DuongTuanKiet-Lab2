@@ -1,18 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 1
-  Date: 9/28/2024
-  Time: 7:04 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Insert Product</title>
+    <title>Insert Product Page</title>
     <%@include file="cdn.jsp"%>
 </head>
 <body>
-<%@include file="nav-bar.jsp" %>
+<%@include file="navbar.jsp" %>
 <div class="container p-4">
     <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -46,6 +40,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

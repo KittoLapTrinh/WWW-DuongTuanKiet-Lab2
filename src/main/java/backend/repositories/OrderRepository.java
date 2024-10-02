@@ -28,16 +28,13 @@ public class OrderRepository {
             logger.error(e.getMessage());
         }
     }
-
     public Optional<Order> getOrderLatest(){
-        Order order = em.createNamedQuery("Order.getOrderLast", Order.class).getSingleResult();
-        return Optional.ofNullable(Optional.of(order)).orElseThrow(() -> new RuntimeException("Not found"));
+       Order order =  em.createNamedQuery("Order.getOrderLast", Order.class)
+                .getSingleResult();
+       return Optional.ofNullable(Optional.of(order).orElseThrow(() -> new RuntimeException("Not found")));
     }
-
 
     public List<Order> getAll(){
         return em.createNamedQuery("Order.getAll",Order.class).getResultList();
     }
-
-
 }

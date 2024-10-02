@@ -1,36 +1,59 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 1
-  Date: 9/28/2024
-  Time: 7:04 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="backend.services.ProductService" %>
+<%@ page import="backend.models.Product" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Product Page</title>
-    <%@include file="cdn.jsp"%>
+    <%@include file="cdn.jsp" %>
 </head>
 <body>
-<%@include file="nav-bar.jsp"%>
-<h2>List Products</h2>
+<%@include file="navbar.jsp" %>
+<h1 class="text-center">List products</h1>
 <div class="container">
     <table class="table container table-bordered table-responsive">
         <thead class="table-dark text-center">
-            <tr>
-                <th>Product Name</th>
-                <th>Manufacturer Name</th>
-                <th>Unit</th>
-                <th>Description</th>
-                <th>Delete</th>
-                <th>Edit</th>
-            </tr>
+        <tr>
+            <th>Product name</th>
+            <th>Manufacturer Name</th>
+            <th>Unit</th>
+            <th>Description</th>
+            <td>Delete</td>
+            <th>Edit</th>
+        </tr>
         </thead>
         <tbody class="text-center">
-
+        <%
+            ProductService productService = new ProductService();
+            List<Product> products = productService.getProducts();
+            for (Product product : products) {
+                String delete = "controls?action=delete_product&id=" + product.getId();
+        %>
+        <tr>
+            <td><%= product.getName() %>
+            </td>
+            <td><%= product.getManufacturer() %>
+            </td>
+            <td><%= product.getUnit() %>
+            </td>
+            <td><%= product.getDescription() %>
+            </td>
+            <td>
+                <a class="btn btn-sm btn-danger" href=<%=delete%>>
+                    <i class="fa-solid fa-trash"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-sm btn-warning" href="update-product.jsp?id=<%=product.getId()%>">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </a>
+            </td>
+        </tr>
+        <%
+            }
+        %>
         </tbody>
     </table>
 </div>
-
 </body>
 </html>

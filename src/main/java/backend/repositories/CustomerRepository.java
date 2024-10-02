@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Optional;
 
-
 public class CustomerRepository {
     private final EntityManager em;
     private final EntityTransaction transaction;
@@ -20,36 +19,35 @@ public class CustomerRepository {
         transaction = em.getTransaction();
     }
 
-    public void insert(Customer customer) {
-        try{
+    public void insertCustomer(Customer customer) {
+        try {
             transaction.begin();
             em.persist(customer);
             transaction.commit();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             transaction.rollback();
             logger.error(ex.getMessage());
         }
     }
 
-    public boolean deleteCustomer(long id) {
-        try{
+    public boolean deleteCustomer(long id){
+        try {
             transaction.begin();
-            em.remove(em.find(Customer.class, id));
+            em.remove(em.find(Customer.class,id));
             transaction.commit();
-            return true;
+            return  true;
         }catch (Exception e){
             transaction.rollback();
-            logger.error(e.getMessage());
         }
         return false;
     }
 
     public void update(Customer customer) {
-        try{
+        try {
             transaction.begin();
             em.merge(customer);
             transaction.commit();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             transaction.rollback();
             logger.error(ex.getMessage());
         }
@@ -60,14 +58,8 @@ public class CustomerRepository {
         return rs == null ? Optional.empty() : Optional.of(rs);
     }
 
-    public List<Customer> getCustomers(){
-        return em.createNamedQuery("Customer.findAll", Customer.class).getResultList();
+    public List<Customer> getCustomers() {
+        return em.createNamedQuery("Customer.findAll", Customer.class)
+                .getResultList();
     }
-
-
-
-
-
-
-
 }

@@ -7,7 +7,7 @@ public class OrderDetailService {
     private final OrderDetailRepository orderDetailRepository;
 
     public OrderDetailService() {
-        orderDetailRepository = new OrderDetailRepository();
+         orderDetailRepository = new OrderDetailRepository();
     }
     public void insertOrderDetail(OrderDetail orderDetail){
         orderDetailRepository.insertOrderDetail(orderDetail);
@@ -15,4 +15,12 @@ public class OrderDetailService {
     public void updateOrderDetail(OrderDetail orderDetailNew){
         orderDetailRepository.update(orderDetailNew);
     }
+//    public List<OrderDetail> getCartProducts(ArrayList<OrderDetail> orderDetails){
+//        List<OrderDetail> rs = new ArrayList<>();
+//        if(orderDetails.size()  > 0){
+//            for(OrderDetail orderDetail : orderDetails){
+//
+//            }
+//        }
+//    }
 }
