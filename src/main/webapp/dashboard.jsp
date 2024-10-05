@@ -61,7 +61,7 @@
                     text: "Chart Of Total Revenue Of Each Product"
                 },
                 subtitles: [{
-                    text: "2023"
+                    text: "2024"
                 }],
                 axisY: {
                     title: "USD",
