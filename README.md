@@ -36,6 +36,10 @@ Chương trình quản lý bán hàng cung cấp một cách thức dễ dàng c
 ### Cart buy
 ![image](https://github.com/user-attachments/assets/cbb99b6d-4b0a-4978-8941-0dfcfc3c1b3a)
 
+### Biểu đồ tổng số tiền của sản phẩm đó bán được
+![image](https://github.com/user-attachments/assets/ee72737e-b95e-463f-ae64-a5602e311eeb)
+
+
 
 
 
